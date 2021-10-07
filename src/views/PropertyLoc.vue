@@ -5,7 +5,7 @@
         <div class="forms">
         <form>
             <v-text-field label="City,State" @blur="show" id="prop_loc"></v-text-field>
-            <span>If your city is not listed, please mention close by city</span>
+            <span>Please mention close by city</span>
             <div class="link"><router-link to="/found-home">Next</router-link></div> 
 
             <!-- <v-btn><v-icon>mdi-arrow-right</v-icon>Con</v-btn> -->

@@ -21,7 +21,7 @@
           :key="item.name"
         >
           <td>{{ item.name }}</td>
-          <td>{{ item.rate }}</td>
+          <td>{{ item.rate }} %</td>
         </tr>
       </tbody>
     </template>

@@ -65,7 +65,7 @@
 
 
     </v-row>  
-         <div class="link" >  <router-link to="/property-use">Next</router-link> </div>
+         <div class="link">  <router-link to="/property-use">Next</router-link> </div>
 
     </section>
  <!-- <keep-alive><component v-bind:is="PropertyUse" /></keep-alive> -->
@@ -79,6 +79,7 @@
 export default {
     name: 
     'PropertyType',
+    
     methods:{
       show(){
       var clicked_id=(event.srcElement.id);

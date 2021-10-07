@@ -35,7 +35,7 @@
 
 <p id="bank_acc" class="display">{{selected}}</p>
 <div class="link"><router-link to="/borrower">Next</router-link></div> 
-<span>Skip this step</span>
+<span><router-link to="/borrower">Skip this step</router-link></span>
 
 
 

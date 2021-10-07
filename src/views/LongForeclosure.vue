@@ -7,7 +7,7 @@
   <input type="range" min="0" @blur="show" max="7" value="5"
    class="slider" id="myRange">
 </div>
-  <p>Value: <span id="long_forclosure"></span></p>
+  <p><span>0 to 7 years</span> Value: <span id="long_forclosure"></span></p>
 <div class="link"><router-link to="/address">Next</router-link> </div></div>
 
         </section>

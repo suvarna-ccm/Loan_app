@@ -1,18 +1,33 @@
 <template>
-  <v-app app>
-    
-      <app-navigation></app-navigation>
-      
-      <!-- <rates v-bind:class="{display: isDisplay}"></rates> -->
+  <v-app>
+        <v-app-bar app>
+           <router-link to="/">    <v-img
+        class="mx-2"
+        :src="require('./assets/logo.png')" 
+        max-height="64"
+        max-width="64"
+        contain
+      ></v-img></router-link>
+            <v-toolbar-title> <router-link to="/"> Welcome to Ezee Loan</router-link></v-toolbar-title>
+            <nav>
+    <ul>
+      <li><router-link to="/">HOME</router-link></li>
+      <li><router-link to="/about">ABOUT</router-link></li>
+      <li><router-link to="/contact">CONTACT</router-link></li>
 
-      <!-- <rates></rates> -->
-       <v-container> 
+    </ul>
+</nav>
+
+              </v-app-bar>
+        <v-container> 
+                     <router-view></router-view>
+
        <intro></intro>
        <property-type></property-type>
-       <router-view></router-view>
-      <div class="thanks" > <v-btn @click="show">Thanks for your time</v-btn></div>
-
-       <div id="inputs">
+      <div class="thanks" > 
+<v-btn @click="show" id="thnks_btn">
+      Thanks for your time</v-btn></div>
+     <div id="inputs" v-if="Active" >
          <p id="loan_txt"></p>
          <p id="prop_typ_txt"></p>
          <p id="prop_use_txt"></p>
@@ -46,20 +61,27 @@
 </template>
 
 <script>
-import AppNavigation from './components/AppNavigation.vue'
+// import AppNavigation from './components/AppNavigation.vue'
 import Intro from './components/Intro.vue'
 import PropertyType from './views/PropertyType.vue'
 
 export default {
   components: {
-     AppNavigation,
+//      AppNavigation,
      Intro,
      PropertyType,
     //  Rates,
     },
+    data(){
+          return{
+                Active:false
+          }
+    },
+    
     methods:{
       show(){
-
+            this.Active=true
+    //  this.Active=ActiveStatus
       var c25=localStorage.getItem("loan")
       document.getElementById("loan_txt").innerHTML="Type of Loan - "+c25  
 
@@ -139,13 +161,16 @@ var c24=localStorage.getItem("ssn")
 
       }
     },
-  setup() {
-   
-}
+ 
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" >
+.v-application .theme--light.v-app-bar.v-toolbar.v-sheet {
+       background-color: deepskyblue;}
+.v-application .v-toolbar__title a{color:#2c3e50}
+li{display: inline;list-style: none;margin-right: 1em;}
+
 .thanks{clear:both;float:right; margin-top:1em ;padding-bottom:1em ;}
 #inputs{clear: both}
 h2{padding-bottom: 1em;}

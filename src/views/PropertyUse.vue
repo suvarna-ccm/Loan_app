@@ -3,16 +3,16 @@
         <section>
         <h2>How this property will be used?</h2>
         <v-row>
-          <v-col class="d-flex"  cols="12" sm="2"> 
-          <v-card><p id="prop_use1" @click="show">Primary Home</p></v-card>
+          <v-col class="d-flex"  cols="12" sm="3"> 
+          <v-btn id="prop_use1" @click="show">Primary Home</v-btn>
           </v-col>
 
-           <v-col class="d-flex"  cols="12" sm="2"> 
-          <v-card><p id="prop_use2" @click="show">Secondary Home</p></v-card>
+           <v-col class="d-flex"  cols="12" sm="3"> 
+          <v-btn id="prop_use2" @click="show">Secondary Home</v-btn>
           </v-col>
 
-           <v-col class="d-flex"  cols="12" sm="2"> 
-          <v-card><p id="prop_use3" @click="show">Rental Home</p></v-card>
+           <v-col class="d-flex"  cols="12" sm="6"> 
+          <v-btn  id="prop_use3" @click="show">Rental Home</v-btn>
           </v-col>
         </v-row>
    <div class="link">   <router-link to="/property-loc">Next</router-link> </div>
@@ -43,3 +43,6 @@ methods:{
     
 }
 </script>
+<style scoped>
+/* .v-sheet.v-card{border-radius: 50%; padding: 1em} */
+</style>

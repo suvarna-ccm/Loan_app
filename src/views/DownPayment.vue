@@ -8,7 +8,7 @@
   <div class="slidecontainer">
   <input type="range" min="00%" @blur="show" max="90%" value="50" class="slider" id="myRange">
 </div>
-  <p>Value: <span id="down_pay"></span></p>
+  <p><span>0 to 90%</span> Value: <span id="down_pay"></span></p>
         </div>
          <div class="link">       <router-link to="/bank-account">Next</router-link> 
          </div></div>

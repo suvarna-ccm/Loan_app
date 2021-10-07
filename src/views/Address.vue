@@ -6,7 +6,7 @@
 <v-text-field id="street" :rules="[rules.required]"
   placeholder="Street Address"></v-text-field>
 <v-text-field id="zip" :rules="[rules.required]" placeholder="Enter zip"></v-text-field>
-<v-text-field id="city" @click="show" placeholder="City"></v-text-field>
+<v-text-field id="city" :rules="[rules.required]" @click="show" placeholder="City"></v-text-field>
 
            <div class="link">     <router-link to="/name"  >Next</router-link> </div>
 

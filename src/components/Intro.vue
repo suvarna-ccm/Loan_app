@@ -10,14 +10,14 @@
           :hint="`${select.loan}`"
           :items="items"
           item-text="loan"
-          item-value="abbr"
+          item-value="loan"
           label="Loan Purpose"
           persistent-hint
           return-object
           single-line
           @dblclick="show"
+          
         ></v-select>
-<!-- <p>{{select}}</p> -->
 </v-col>
 <v-col
         class="d-flex"
@@ -29,8 +29,6 @@
 
 </v-col>
 </v-row>
-<!-- <rates v-bind:class="{display: isDisplay}"></rates> -->
-<!-- <rates>h</rates> -->
 
 </div>
 </v-main>
@@ -43,7 +41,7 @@ export default {
     // components:{Rates},
     data () {
       return {
-        select: { state: 'Florida'},
+        select: {loan: 'Home Loan'},
         items: [
           { loan: 'Home Loan'},
           { loan: 'Maintainance Loan' },
@@ -51,6 +49,7 @@ export default {
       }
     },
     methods:{
+     
     show(){
    //   alert("hi")
     //  var clicked_id=(event.srcElement.id);
@@ -66,5 +65,5 @@ export default {
 </script>
 
 <style scoped>
-#intro_section{width:60%; margin: 0 auto;background: palegreen;padding: 2em;}
+#intro_section{width:60%; margin: 0 auto;background:gainsboro;padding: 2em;}
 </style>

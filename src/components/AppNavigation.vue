@@ -1,10 +1,7 @@
 <template>
 <v-main>
-<v-toolbar>
-             <!-- <v-img
-             :src="require('../assets/c_logo.jpg')" 
-               class="my-3" contain
-      height="50" /> -->
+<!-- <v-toolbar>
+           
             <v-toolbar-title>Welcome to Ezee Loan</v-toolbar-title>
             <nav>
     <ul>
@@ -17,6 +14,7 @@
 
            
         </v-toolbar>
+         -->
 </v-main>
 </template>
 

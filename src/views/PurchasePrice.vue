@@ -4,9 +4,10 @@
     <h2>What is the estimated purchase price?</h2>
         <div class="forms">
   <div class="slidecontainer">
-  <input type="range" @min="200000" @blur="show" max="250000" value="50" class="slider" id="myRange">
+  <input type="range" min="200000" @blur="show" max="250000" value="50" class="slider" id="myRange">
+
 </div>
-  <p>Value: <span id="pur_price"></span></p>
+  <p><span>0 to 250000</span> Value: <span id="pur_price"></span></p>
      <!-- <v-btn @click="show">show value</v-btn>    -->
           <div class="link">    <router-link to="/down-payment">Next</router-link> </div>
 
