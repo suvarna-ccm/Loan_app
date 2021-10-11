@@ -12,8 +12,7 @@
             @blur="show"></v-text-field>
             <label>(This will not effect your credit.Your SSN is to used 
             to verify your identity.</label>
-
-            </div>
+   </div>
         </section>
     </v-main>
 </template>

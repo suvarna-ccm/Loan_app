@@ -20,12 +20,15 @@
 
               </v-app-bar>
         <v-container> 
-                     <!-- <router-view></router-view> -->
-
        <intro></intro>
        <property-type></property-type>
       <div class="thanks"> 
-<v-btn @click="show" color="Secondary" id="thanks_btn">
+            <v-btn class="right-margin" @click="btnchk">Done</v-btn>
+      <v-btn @click="show"
+       color="Secondary"
+       id="thanks_btn"
+       :disabled="isDisabled"
+       >
       Thanks for your time</v-btn></div>
      <div id="inputs" v-if="Active" >
          <p id="loan_txt"></p>
@@ -61,29 +64,30 @@
 </template>
 
 <script>
-// import AppNavigation from './components/AppNavigation.vue'
 import Intro from './components/Intro.vue'
 import PropertyType from './views/PropertyType.vue'
 
 export default {
   components: {
-//      AppNavigation,
      Intro,
      PropertyType,
-    //  Rates,
     },
     data(){
           return{
-             //   isActive:true,
+                isDisabled:true,
                 Active:false,
                 flag:1,
+                input:' '
           }
     },
-    
     methods:{
+          btnchk(){
+       if(document.getElementById("ssn")!=null)
+        this.isDisabled=false
+          },
+
       show(){
       this.Active=true
-
       var c25=localStorage.getItem("loan")
       document.getElementById("loan_txt").innerHTML="Type of Loan - "+c25  
 
@@ -173,11 +177,12 @@ var c24=localStorage.getItem("ssn")
 .v-application .v-toolbar__title a{color:#2c3e50}
 li{display: inline;list-style: none;margin-right: 1em;}
 
-.thanks{clear:both;float:right; margin-top:1em ;padding-bottom:1em ;}
+.thanks{clear:both;float:left; margin-top:1em ;padding-bottom:1em ;}
 #inputs{clear: both}
 h2{padding-bottom: 1em;}
 .v-card p{margin-top:1em}
 .top-margin{margin-top:1em}
+.right-margin{margin-right:1em}
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
