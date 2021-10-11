@@ -10,7 +10,7 @@
 </div>
   <p><span>0 to 90%</span> Value: <span id="down_pay"></span></p>
         </div>
-         <div class="link">       <router-link to="/bank-account">Next</router-link> 
+         <div class="link" v-if="active">       <router-link to="/bank-account">Next</router-link> 
          </div></div>
         </section>
     </v-main>
@@ -20,9 +20,15 @@
 <script>
 export default {
     name:'Down-Payment',
+    data(){
+        return{
+            active:false,
+        }
+    },
     methods:{
         show(){
-              var slider = document.getElementById("myRange");
+            this.active=true
+            var slider = document.getElementById("myRange");
         var output = document.getElementById("down_pay");
          output.innerHTML = slider.value + "%"; // Display the default slider value
 

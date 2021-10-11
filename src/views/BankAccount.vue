@@ -34,7 +34,7 @@
  @click="show" value="None of these" hide-details></v-checkbox>
 
 <p id="bank_acc" class="display">{{selected}}</p>
-<div class="link"><router-link to="/borrower">Next</router-link></div> 
+<div class="link" v-if="active"><router-link to="/borrower">Next</router-link></div> 
 <span><router-link to="/borrower">Skip this step</router-link></span>
 
 
@@ -51,11 +51,13 @@ export default {
     name:'BankAccount',
     data(){
       return{
-        selected:[]
+        selected:[],
+        active:false
       }
     },
     methods:{
       show(){
+        this.active=true
         var txt=document.getElementById("bank_acc").textContent
         localStorage.setItem("bank_acc",txt)
       }

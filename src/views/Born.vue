@@ -31,7 +31,7 @@
       ></v-date-picker>
     </v-menu>
 
- <div class="link">    <router-link to="/military">Next</router-link> </div>
+ <div class="link" v-if="active">    <router-link to="/military">Next</router-link> </div>
             </div>
         </section>
     </v-main>
@@ -44,6 +44,7 @@ export default {
       activePicker: null,
       date: null,
       menu: false,
+      active:false
     }),
     watch: {
       menu (val) {
@@ -52,6 +53,7 @@ export default {
     },
     methods: {
       save (date) {
+        this.active=true
         this.$refs.menu.save(date)
       },
     },

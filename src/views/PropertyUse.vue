@@ -15,7 +15,7 @@
           <v-btn  id="prop_use3" @click="show">Rental Home</v-btn>
           </v-col>
         </v-row>
-   <div class="link">   <router-link to="/property-loc">Next</router-link> </div>
+   <div class="link" v-if="active">   <router-link to="/property-loc">Next</router-link> </div>
           
        <!-- <property-loc></property-loc> -->
 
@@ -26,12 +26,15 @@
 <script>
 // import PropertyLoc from './PropertyLoc.vue'
 export default {
-  // components: {
-  //    PropertyLoc,
-  //    },
+  data(){
+    return{
+      active:false,
+    }
+  },
 name:'PropertyUse',
 methods:{
   show(){
+    this.active=true
     var clicked_id=(event.srcElement.id);
       var txt=document.getElementById(clicked_id).textContent;
       localStorage.setItem("prop_use",txt);

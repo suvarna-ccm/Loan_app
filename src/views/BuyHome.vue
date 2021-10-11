@@ -8,7 +8,7 @@
             <p><v-btn id="btn3" @click="show" color="primary">I'm shopping and considering few options</v-btn></p>
             <p><v-btn id="btn4" @click="show" color="primary">Within next couple months</v-btn></p>
         <!-- <purchase-price></purchase-price> -->
-      <div class="link" >   <router-link to="/purchase-price">Next</router-link> </div>
+      <div class="link" v-if="active">   <router-link to="/purchase-price">Next</router-link> </div>
             </div>
         </section>
     </v-main>
@@ -19,8 +19,14 @@
 export default {
 //   components: { PurchasePrice },
     name:'BuyHome',
+    data(){
+        return{
+            active:false,
+        }
+    },
     methods:{
         show(){
+            this.active=true
              var clicked_id=(event.srcElement.id);
      var txt=document.getElementById(clicked_id).textContent;
      localStorage.setItem("buy_home",txt);

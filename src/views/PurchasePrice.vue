@@ -9,7 +9,7 @@
 </div>
   <p><span>0 to 250000</span> Value: <span id="pur_price"></span></p>
      <!-- <v-btn @click="show">show value</v-btn>    -->
-          <div class="link">    <router-link to="/down-payment">Next</router-link> </div>
+          <div class="link" v-if="active">    <router-link to="/down-payment">Next</router-link> </div>
 
         </div>
 
@@ -25,10 +25,12 @@ export default {
     data(){
       return{
         value:0,
+        active:false
       }
     },
     methods:{
       show(){
+        this.active=true
         var slider = document.getElementById("myRange");
         var output = document.getElementById("pur_price");
          output.innerHTML = "$" + slider.value; // Display the default slider value

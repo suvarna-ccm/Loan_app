@@ -11,7 +11,7 @@
             @blur="show"
           ></v-text-field>
                     <p><span>We take your privacy seriously</span></p>
-     <div class="link">    <router-link to="/password">Next</router-link> </div>
+     <div class="link" v-if="active">    <router-link to="/password">Next</router-link> </div>
             </div>
         </section>
     </v-main>
@@ -23,6 +23,7 @@ export default {
     data(){
         return{
             email:'',
+            active:false,
             rules:{
                           required: value => !!value || 'Required.',
             counter: value => value.length <= 20 || 'Max 20 characters',
@@ -38,13 +39,12 @@ export default {
     
     methods:{
           show(){
-    //  var clicked_id=(event.srcElement.id);
+            this.active=true
       var txt=document.getElementById("email").value;
 
     localStorage.setItem("email",txt);
 
     //  var bankruptcy=localStorage.getItem("bankruptcy");
-      console.log(txt);
 
 
     }

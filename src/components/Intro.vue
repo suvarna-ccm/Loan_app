@@ -35,12 +35,13 @@
 </template>
 
 <script>
-// import Rates from '../views/Rates.vue'
+ //import Rates from '../views/Rates.vue'
 export default {
     name: 'Intro',
-    // components:{Rates},
+   //  components:{Rates},
     data () {
       return {
+        isRates:false,
         select: {loan: 'Home Loan'},
         items: [
           { loan: 'Home Loan'},
@@ -51,6 +52,7 @@ export default {
     methods:{
      
     show(){
+//this.isRates=true
    //   alert("hi")
     //  var clicked_id=(event.srcElement.id);
       var txt=document.getElementsByClassName("v-messages__message")[0].textContent;

@@ -20,12 +20,12 @@
 
               </v-app-bar>
         <v-container> 
-                     <router-view></router-view>
+                     <!-- <router-view></router-view> -->
 
        <intro></intro>
        <property-type></property-type>
-      <div class="thanks" > 
-<v-btn @click="show" id="thnks_btn">
+      <div class="thanks"> 
+<v-btn @click="show" color="Secondary" id="thanks_btn">
       Thanks for your time</v-btn></div>
      <div id="inputs" v-if="Active" >
          <p id="loan_txt"></p>
@@ -74,14 +74,16 @@ export default {
     },
     data(){
           return{
-                Active:false
+             //   isActive:true,
+                Active:false,
+                flag:1,
           }
     },
     
     methods:{
       show(){
-            this.Active=true
-    //  this.Active=ActiveStatus
+      this.Active=true
+
       var c25=localStorage.getItem("loan")
       document.getElementById("loan_txt").innerHTML="Type of Loan - "+c25  
 
@@ -187,7 +189,7 @@ h2{padding-bottom: 1em;}
 
 section{margin-top:1em}
 .container{margin-top:2em}
-.v-btn{margin-left:1em;}
+section .v-btn{margin-left:1em; border-radius: 25px;}
 .padding-bottom{padding-bottom:1em ;}
 #nav {
   padding: 30px;
@@ -201,7 +203,7 @@ section{margin-top:1em}
     }
   }
 }
-.v-card{cursor: pointer;}
+.v-card p{cursor: pointer;}
 .forms{width:60%; margin: 0 auto;}
 .link{float: right;margin:1em 0 0 0;}
  a{text-decoration: none;text-decoration-thickness: 40;}

@@ -6,7 +6,7 @@
             to save your progress</h2>
           <v-text-field
             :append-icon="show3 ? 'mdi-eye' : 'mdi-eye-off'"
-            :rules="[rules.required, rules.min]"
+            :rules="[rules.required, rules.min,rules.passw]"
             :type="show3 ? 'text' : 'password'"
             name="input-10-2"
             label="Not visible"
@@ -17,7 +17,7 @@
             id="password"
             @blur="show"
           ></v-text-field>
-     <div class="link">    <router-link to="/mobile">Next</router-link> </div>
+     <div class="link" v-if="active">    <router-link to="/mobile">Next</router-link> </div>
             </div>
         </section>
     </v-main>
@@ -29,6 +29,7 @@ export default {
     name:'Password',
        data () {
       return {
+        active:false,
         show1: false,
         show2: true,
         show3: false,
@@ -37,12 +38,14 @@ export default {
         rules: {
           required: value => !!value || 'Required.',
           min: v => v.length >= 8 || 'Min 8 characters',
+          passw: v => v.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}$/) || 'Please follow the password rule,atleast 1 digit,1 lowercase, 1 uppercase',
           emailMatch: () => (`The email and password you entered don't match`),
         },
       }
     },
     methods:{
         show(){
+          this.active=true
             var txt=document.getElementById("password").value;
             console.log(txt);
         }

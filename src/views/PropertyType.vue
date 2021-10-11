@@ -65,10 +65,10 @@
 
 
     </v-row>  
-         <div class="link">  <router-link to="/property-use">Next</router-link> </div>
+         <div class="link" v-if="active">  <router-link to="/property-use">Next</router-link> </div>
 
     </section>
- <!-- <keep-alive><component v-bind:is="PropertyUse" /></keep-alive> -->
+     <router-view></router-view>
         </v-main>
         
 </template>
@@ -79,9 +79,15 @@
 export default {
     name: 
     'PropertyType',
+    data(){
+      return{
+        active:false
+      }
+    },
     
     methods:{
       show(){
+        this.active=true;
       var clicked_id=(event.srcElement.id);
       var txt=document.getElementById(clicked_id).textContent;
       localStorage.setItem("prop_typ",txt);
@@ -89,20 +95,7 @@ export default {
       console.log(prop_typ);
       }
 
-      //console.log(clicked_id)
-      //  var myContent = document.getElementsByClassName("txt")[0].textContent;    
-     // var myContent = document.getElementById("clicked_id").textContent;
-      //console.log(clicked_id);
-
-     //   var myContent = this.textContent;
-
-       // console.log(myContent);
-      //  localStorage.setItem("Suvarna", myContent);
-     //   console.log(localStorage.getItem("myContent"))
-
-      
-
-     // console.log(.v-card.value)
+     
      }
     }
         

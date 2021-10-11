@@ -12,9 +12,8 @@
          <v-btn id="borrower_y" @click="show1">Yes</v-btn>
          <v-btn id="borrower_n" @click="show1">No</v-btn>
          
-     <div class="link">    <router-link to="/an-income">Next</router-link> </div>
-        
-   
+     <div class="link" v-if="active">   
+    <router-link to="/an-income">Next</router-link> </div>
       </section>
         </div>
         </v-main>
@@ -23,6 +22,11 @@
 <script>
 export default {
     name:'Borrower',
+    data(){
+        return{
+            active:false
+        }
+    },
     methods:{
       
     show(){
@@ -30,16 +34,11 @@ export default {
 
      var txt1=document.getElementById(clicked_id).textContent;
      localStorage.setItem("is_buy",txt1);
-
-    
-
-
-     
-
       },
     
     show1(){
-             var clicked_id=(event.srcElement.id);
+        this.active=true
+     var clicked_id=(event.srcElement.id);
      var txt2=document.getElementById(clicked_id).textContent;
      localStorage.setItem("is_coborrow",txt2);
    

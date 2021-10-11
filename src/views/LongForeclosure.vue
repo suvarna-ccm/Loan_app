@@ -8,7 +8,7 @@
    class="slider" id="myRange">
 </div>
   <p><span>0 to 7 years</span> Value: <span id="long_forclosure"></span></p>
-<div class="link"><router-link to="/address">Next</router-link> </div></div>
+<div class="link" v-if="active"><router-link to="/address">Next</router-link> </div></div>
 
         </section>
     </v-main>
@@ -20,10 +20,12 @@ export default {
     data(){
         return{
             value:0,
+            active:false
         }
     },
     methods:{
          show(){
+             this.active=true
         var slider = document.getElementById("myRange");
         var output = document.getElementById("long_forclosure");
          output.innerHTML = slider.value +" Years"; // Display the default slider value
